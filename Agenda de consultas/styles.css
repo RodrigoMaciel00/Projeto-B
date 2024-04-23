@@ -1,16 +1,16 @@
-/* Reset CSS */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos globais */
+
 body {
     font-family: 'Barlow', sans-serif;
     line-height: 1.6;
     background: linear-gradient(to right, #e0eafc, #cfdef3);
-    color: #333; /* Definindo uma cor padrão para o texto */
+    color: #333;
 }
 
 .container {
