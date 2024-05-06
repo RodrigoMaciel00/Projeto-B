@@ -267,7 +267,6 @@ body::before {
     100% { background-position: 100% 0; }
 }
 
-/* Estilo para a imagem da clínica */
 .clinic-image {
     max-width: 100%;
     height: auto;
@@ -275,7 +274,6 @@ body::before {
     margin-bottom: 20px;
 }
 
-/* Estilo para as imagens dos serviços */
 .service-images {
     display: flex;
     flex-wrap: wrap;
