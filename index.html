@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinária</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Clínica Veterinária</h1>
+            <nav class="navbar">
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#appointment">Agendar Consulta</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>Sobre a Clínica</h2>
+            <!-- Espaço reservado para a imagem da clínica -->
+            <img src="imagem-clinica.jpg" alt="Clínica Veterinária" class="clinic-image">
+            <p>A Clínica Veterinária da UNIESP oferece cuidados de qualidade para o seu animal de estimação. Nosso compromisso é com o bem-estar e a saúde dos pets, proporcionando serviços veterinários de excelência.</p>
+            <p>Nossa equipe é composta por veterinários experientes e dedicados, prontos para atender às necessidades de cada animal com amor e cuidado.</p>
+            <p>Estamos localizados na <strong>Av. Principal, 123 - Centro</strong>.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <!-- Espaço reservado para imagens de serviços -->
+            <div class="service-images">
+                <div class="service-image">
+                    <img src="imagem-consulta.jpg" alt="Consulta Veterinária">
+                    <h3>Consultas Veterinárias</h3>
+                    <p>Realizamos consultas especializadas para diagnóstico e tratamento de diversas condições de saúde em animais de estimação.</p>
+                </div>
+                <div class="service-image">
+                    <img src="imagem-vacinacao.jpg" alt="Vacinação">
+                    <h3>Vacinação</h3>
+                    <p>Oferecemos uma ampla gama de vacinas para garantir a imunização e proteção de cães, gatos e outros animais.</p>
+                </div>
+                <!-- Adicione mais divs de service-image conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="section appointment">
+        <div class="container">
+            <h2>Agendar Consulta</h2>
+            <form action="submit.php" method="post">
+                <label for="owner_name">Nome do Proprietário:</label>
+                <input type="text" id="owner_name" name="owner_name" required>
+
+                <label for="pet_name">Nome do Animal de Estimação:</label>
+                <input type="text" id="pet_name" name="pet_name" required>
+
+                <label for="species">Espécie do Animal:</label>
+                <input type="text" id="species" name="species" required>
+
+                <label for="age">Idade do Animal:</label>
+                <input type="text" id="age" name="age" required>
+
+                <label for="breed">Raça do Animal:</label>
+                <input type="text" id="breed" name="breed">
+
+                <label for="appointment_date">Data Preferencial para a Consulta:</label>
+                <input type="date" id="appointment_date" name="appointment_date" required>
+
+                <label for="contact_number">Número de Contato:</label>
+                <input type="tel" id="contact_number" name="contact_number" required>
+
+                <label for="additional_comments">Comentários Adicionais:</label>
+                <textarea id="additional_comments" name="additional_comments"></textarea>
+
+                <label for="preferred_time">Horário Preferencial para a Consulta:</label>
+                <select id="preferred_time" name="preferred_time">
+                    <option value="morning">Manhã</option>
+                    <option value="afternoon">Tarde</option>
+                    <option value="evening">Noite</option>
+                </select>
+
+                <button type="submit">Agendar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p>Email: contato@clinicauniesp.com</p>
+            <p>Endereço: Av. Principal, 123 - Centro</p>
+        </div>
+    </section>
+
+    <section id="agenda" class="section agenda">
+        <div class="container">
+            <h2>Agenda</h2>
+            <div class="agenda-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Horário</th>
+                            <th>Disponibilidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10/05/2024</td>
+                            <td>09:00</td>
+                            <td class="booked">Indisponível</td>
+                        </tr>
+                        <tr>
+                            <td>10/05/2024</td>
+                            <td>10:00</td>
+                            <td class="available">Disponível</td>
+                        </tr>
+                        <tr>
+                            <td>10/05/2024</td>
+                            <td>11:00</td>
+                            <td class="available">Disponível</td>
+                        </tr>
+                        <!-- Mais linhas de agenda podem ser adicionadas aqui -->
+                    </tbody>
+                </table>
+                <div class="legend">
+                    <span>Legenda:</span>
+                    <span class="available">Disponível</span>
+                    <span class="booked">Indisponível</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Clínica Veterinária UNIESP. Todos os direitos reservados.</p>
+            <p>Horário de Funcionamento: Segunda a Sexta, das 8h às 18h.</p>
+            <p class="supreme">Siga-nos nas redes sociais:</p>
+            <div class="social-media">
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+            <p class="supreme">Conheça mais em nosso <a href="https://www.uniesp.br/" target="_blank" class="portal-link">portal UNIESP</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>

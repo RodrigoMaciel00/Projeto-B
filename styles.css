@@ -1,0 +1,313 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header, .footer {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.header.hide {
+    top: -100px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #ededed 50%, #ededed 100%);
+    z-index: -1;
+    animation: backgroundAnimation 10s linear infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+.about, .services, .appointment, .contact, .agenda {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .services h2, .appointment h2, .contact h2, .agenda h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about p, .services p, .appointment p, .contact p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.services ul {
+    list-style: none;
+}
+
+.services li {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.services li h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.services li p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.appointment form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.appointment form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.appointment form input[type="text"],
+.appointment form input[type="tel"],
+.appointment form input[type="date"],
+.appointment form select,
+.appointment form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #34495e, #2c3e50);
+}
+
+.agenda .agenda-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.agenda table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.agenda th, .agenda td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.agenda .legend {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.agenda .legend span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.agenda .available {
+    color: #2ecc71;
+}
+
+.agenda .booked {
+    color: #e74c3c;
+}
+
+.footer {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .supreme {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f1c40f;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #f1c40f;
+}
+
+.portal-link {
+    color: #f1c40f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.portal-link:hover {
+    color: #f39c12;
+}
+
+/* Adiciona um fundo sutilmente animado */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #ededed 50%, #ededed 100%);
+    z-index: -1;
+    animation: backgroundAnimation 10s linear infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+/* Estilo para a imagem da clínica */
+.clinic-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para as imagens dos serviços */
+.service-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-image {
+    width: 300px;
+    margin: 0 20px 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-image:hover {
+    transform: translateY(-5px);
+}
+
+.service-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo para tornar o layout responsivo */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .service-image {
+        width: calc(33.33% - 20px);
+    }
+}
