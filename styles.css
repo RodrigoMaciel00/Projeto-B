@@ -249,7 +249,6 @@ button:hover {
     color: #f39c12;
 }
 
-/* Adiciona um fundo sutilmente animado */
 body::before {
     content: '';
     position: fixed;
