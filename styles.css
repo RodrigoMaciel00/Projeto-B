@@ -51,10 +51,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
 .navbar a {
     color: #fff;
     text-decoration: none;
-    margin-left: 20px;
     transition: color 0.3s ease;
 }
 
@@ -63,76 +71,61 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-    padding: 40px 0;
+    padding: 100px 0 60px;
+    margin-top: 60px;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #ededed 50%, #ededed 100%);
-    z-index: -1;
-    animation: backgroundAnimation 10s linear infinite alternate;
-}
-
-@keyframes backgroundAnimation {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 0; }
-}
-
-.about, .services, .appointment, .contact, .agenda {
+.about, .services, .appointment, .contact, .surgery, .exam-records {
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.about h2, .services h2, .appointment h2, .contact h2, .agenda h2 {
+.about h2, .services h2, .appointment h2, .contact h2, .surgery h2, .exam-records h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #333;
 }
 
-.about p, .services p, .appointment p, .contact p {
+.about p, .services p, .appointment p, .contact p, .surgery p, .exam-records p {
     font-size: 18px;
     line-height: 1.8;
     margin-bottom: 15px;
     color: #555;
 }
 
-.services ul {
-    list-style: none;
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.services li {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #555;
+.service-item {
+    flex: 1;
+    min-width: 250px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.services li h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.services li p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #777;
-}
-
-.appointment form {
+.appointment form,
+.surgery form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.appointment form label {
+.appointment form label,
+.surgery form label {
     font-size: 18px;
     margin-bottom: 5px;
     color: #555;
@@ -142,7 +135,12 @@ body::before {
 .appointment form input[type="tel"],
 .appointment form input[type="date"],
 .appointment form select,
-.appointment form textarea {
+.appointment form textarea,
+.surgery form input[type="text"],
+.surgery form input[type="tel"],
+.surgery form input[type="date"],
+.surgery form select,
+.surgery form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -164,45 +162,6 @@ button {
 
 button:hover {
     background: linear-gradient(to right, #34495e, #2c3e50);
-}
-
-.agenda .agenda-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.agenda table {
-    width: 60%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.agenda th, .agenda td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    text-align: center;
-}
-
-.agenda .legend {
-    width: 30%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.agenda .legend span {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.agenda .available {
-    color: #2ecc71;
-}
-
-.agenda .booked {
-    color: #e74c3c;
 }
 
 .footer {
@@ -248,23 +207,6 @@ button:hover {
     color: #f39c12;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 50%, #ededed 50%, #ededed 100%);
-    z-index: -1;
-    animation: backgroundAnimation 10s linear infinite alternate;
-}
-
-@keyframes backgroundAnimation {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 0; }
-}
-
 .clinic-image {
     max-width: 100%;
     height: auto;
@@ -272,37 +214,78 @@ body::before {
     margin-bottom: 20px;
 }
 
-.service-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+@media (min-width: 768px) {
+    .service-item {
+        width: calc(33.33% - 20px);
+    }
 }
-
-.service-image {
-    width: 300px;
-    margin: 0 20px 20px 0;
+.schedule {
+    background-color: #fff;
+    padding: 40px;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.service-image:hover {
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.calendar-day {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.calendar-day:hover {
+    background: #3498db;
+    color: #fff;
     transform: translateY(-5px);
 }
 
-.service-image img {
+.calendar-day.selected {
+    background: #2980b9;
+    color: #fff;
+}
+
+#schedule-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#schedule-form label {
+    font-size: 18px;
+    color: #555;
+}
+
+#schedule-form input[type="text"] {
     width: 100%;
-    height: auto;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-@media (min-width: 768px) {
-    .service-image {
-        width: calc(33.33% - 20px);
-    }
+button:hover {
+    background: linear-gradient(to right, #34495e, #2c3e50);
 }
