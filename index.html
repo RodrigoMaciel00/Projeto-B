@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Veterinária</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <h1 class="logo">Clínica Veterinária</h1>
             <nav class="navbar">
-                <a href="#about">Sobre</a>
-                <a href="#services">Serviços</a>
-                <a href="#appointment">Agendar Consulta</a>
-                <a href="#contact">Contato</a>
+                <ul>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#appointment">Agendar Consulta</a></li>
+                    <li><a href="#surgery">Agendar Cirurgia</a></li>
+                    <li><a href="#exam-records">Fichas de Exames</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -32,17 +37,13 @@
     <section id="services" class="section services">
         <div class="container">
             <h2>Nossos Serviços</h2>
-            <div class="service-images">
-                <div class="service-image">
-                    <img src="imagem-consulta.jpg" alt="Consulta Veterinária">
-                    <h3>Consultas Veterinárias</h3>
-                    <p>Realizamos consultas especializadas para diagnóstico e tratamento de diversas condições de saúde em animais de estimação.</p>
-                </div>
-                <div class="service-image">
-                    <img src="imagem-vacinacao.jpg" alt="Vacinação">
-                    <h3>Vacinação</h3>
-                    <p>Oferecemos uma ampla gama de vacinas para garantir a imunização e proteção de cães, gatos e outros animais.</p>
-                </div>
+            <div class="service-list">
+                <div class="service-item">Consultas Veterinárias</div>
+                <div class="service-item">Ultrassonografia</div>
+                <div class="service-item">Raio-X</div>
+                <div class="service-item">Vacinação</div>
+                <div class="service-item">Cirurgia</div>
+                <div class="service-item">Exames Hematológicos</div>
             </div>
         </div>
     </section>
@@ -50,18 +51,27 @@
     <section id="appointment" class="section appointment">
         <div class="container">
             <h2>Agendar Consulta</h2>
-            <form action="submit.php" method="post">
-                <label for="owner_name">Nome do Proprietário:</label>
+            <form id="appointment-form" action="submit.php" method="post">
+                <label for="owner_name">Nome do Tutor:</label>
                 <input type="text" id="owner_name" name="owner_name" required>
 
-                <label for="pet_name">Nome do Animal de Estimação:</label>
+                <label for="contact_number">Telefone do Tutor:</label>
+                <input type="tel" id="contact_number" name="contact_number" required>
+
+                <label for="pet_name">Nome do Animal:</label>
                 <input type="text" id="pet_name" name="pet_name" required>
 
                 <label for="species">Espécie do Animal:</label>
-                <input type="text" id="species" name="species" required>
+                <select id="species" name="species" required>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                </select>
 
                 <label for="age">Idade do Animal:</label>
                 <input type="text" id="age" name="age" required>
+
+                <label for="weight">Peso do Animal:</label>
+                <input type="text" id="weight" name="weight" required>
 
                 <label for="breed">Raça do Animal:</label>
                 <input type="text" id="breed" name="breed">
@@ -69,21 +79,90 @@
                 <label for="appointment_date">Data Preferencial para a Consulta:</label>
                 <input type="date" id="appointment_date" name="appointment_date" required>
 
-                <label for="contact_number">Número de Contato:</label>
-                <input type="tel" id="contact_number" name="contact_number" required>
-
-                <label for="additional_comments">Comentários Adicionais:</label>
-                <textarea id="additional_comments" name="additional_comments"></textarea>
-
                 <label for="preferred_time">Horário Preferencial para a Consulta:</label>
-                <select id="preferred_time" name="preferred_time">
+                <select id="preferred_time" name="preferred_time" required>
                     <option value="morning">Manhã</option>
                     <option value="afternoon">Tarde</option>
                     <option value="evening">Noite</option>
                 </select>
 
-                <button type="submit">Agendar</button>
+                <label for="additional_comments">Comentários Adicionais:</label>
+                <textarea id="additional_comments" name="additional_comments"></textarea>
+
+                <button type="submit">Agendar Consulta</button>
             </form>
+        </div>
+    </section>
+
+    <section id="surgery" class="section surgery">
+        <div class="container">
+            <h2>Agendar Cirurgia</h2>
+            <form id="surgery-form" action="submit_surgery.php" method="post">
+                <label for="owner_name_surgery">Nome do Tutor:</label>
+                <input type="text" id="owner_name_surgery" name="owner_name_surgery" required>
+
+                <label for="contact_number_surgery">Telefone do Tutor:</label>
+                <input type="tel" id="contact_number_surgery" name="contact_number_surgery" required>
+
+                <label for="pet_name_surgery">Nome do Animal:</label>
+                <input type="text" id="pet_name_surgery" name="pet_name_surgery" required>
+
+                <label for="species_surgery">Espécie do Animal:</label>
+                <select id="species_surgery" name="species_surgery" required>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                </select>
+
+                <label for="age_surgery">Idade do Animal:</label>
+                <input type="text" id="age_surgery" name="age_surgery" required>
+
+                <label for="weight_surgery">Peso do Animal:</label>
+                <input type="text" id="weight_surgery" name="weight_surgery" required>
+
+                <label for="breed_surgery">Raça do Animal:</label>
+                <input type="text" id="breed_surgery" name="breed_surgery">
+
+                <label for="surgery_date">Data Preferencial para a Cirurgia:</label>
+                <input type="date" id="surgery_date" name="surgery_date" required>
+
+                <label for="preferred_time_surgery">Horário Preferencial para a Cirurgia:</label>
+                <select id="preferred_time_surgery" name="preferred_time_surgery" required>
+                    <option value="morning">Manhã</option>
+                    <option value="afternoon">Tarde</option>
+                    <option value="evening">Noite</option>
+                </select>
+
+                <label for="confirmation">Confirmação:</label>
+                <select id="confirmation" name="confirmation" required>
+                    <option value="1_day">1 dia antes</option>
+                    <option value="2_days">2 dias antes</option>
+                </select>
+
+                <button type="submit">Agendar Cirurgia</button>
+            </form>
+        </div>
+    </section>
+<section id="schedule" class="section schedule">
+    <div class="container">
+        <h2>Agendar Consulta Interativa</h2>
+        <div id="calendar"></div>
+        <form id="schedule-form" action="submit_schedule.php" method="post">
+            <label for="selected-date">Data Selecionada:</label>
+            <input type="text" id="selected-date" name="selected_date" readonly required>
+
+            <label for="selected-time">Horário Selecionado:</label>
+            <input type="text" id="selected-time" name="selected_time" readonly required>
+
+            <button type="submit">Confirmar Agendamento</button>
+        </form>
+    </div>
+</section>
+
+    
+    <section id="exam-records" class="section exam-records">
+        <div class="container">
+            <h2>Fichas de Exames</h2>
+            <p>Em breve, os tutores poderão acessar as fichas de exames dos seus animais aqui.</p>
         </div>
     </section>
 
@@ -96,50 +175,10 @@
         </div>
     </section>
 
-    <section id="agenda" class="section agenda">
-        <div class="container">
-            <h2>Agenda</h2>
-            <div class="agenda-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Horário</th>
-                            <th>Disponibilidade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>10/05/2024</td>
-                            <td>09:00</td>
-                            <td class="booked">Indisponível</td>
-                        </tr>
-                        <tr>
-                            <td>10/05/2024</td>
-                            <td>10:00</td>
-                            <td class="available">Disponível</td>
-                        </tr>
-                        <tr>
-                            <td>10/05/2024</td>
-                            <td>11:00</td>
-                            <td class="available">Disponível</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-                <div class="legend">
-                    <span>Legenda:</span>
-                    <span class="available">Disponível</span>
-                    <span class="booked">Indisponível</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Clínica Veterinária UNIESP. Todos os direitos reservados.</p>
-            <p>Horário de Funcionamento: Segunda a Sexta, das 8h às 18h.</p>
+            <p>Horário de Funcionamento: Segunda a Sexta, das 14h às 18h.</p>
             <p class="supreme">Siga-nos nas redes sociais:</p>
             <div class="social-media">
                 <a href="#" class="social-link">Facebook</a>
@@ -149,5 +188,7 @@
             <p class="supreme">Conheça mais em nosso <a href="https://www.uniesp.br/" target="_blank" class="portal-link">portal UNIESP</a>.</p>
         </div>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
