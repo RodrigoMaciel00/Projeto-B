@@ -81,9 +81,7 @@
 
                 <label for="preferred_time">Horário Preferencial para a Consulta:</label>
                 <select id="preferred_time" name="preferred_time" required>
-                    <option value="morning">Manhã</option>
                     <option value="afternoon">Tarde</option>
-                    <option value="evening">Noite</option>
                 </select>
 
                 <label for="additional_comments">Comentários Adicionais:</label>
@@ -127,9 +125,7 @@
 
                 <label for="preferred_time_surgery">Horário Preferencial para a Cirurgia:</label>
                 <select id="preferred_time_surgery" name="preferred_time_surgery" required>
-                    <option value="morning">Manhã</option>
                     <option value="afternoon">Tarde</option>
-                    <option value="evening">Noite</option>
                 </select>
 
                 <label for="confirmation">Confirmação:</label>
@@ -142,22 +138,21 @@
             </form>
         </div>
     </section>
-<section id="schedule" class="section schedule">
-    <div class="container">
-        <h2>Agendar Consulta Interativa</h2>
-        <div id="calendar"></div>
-        <form id="schedule-form" action="submit_schedule.php" method="post">
-            <label for="selected-date">Data Selecionada:</label>
-            <input type="text" id="selected-date" name="selected_date" readonly required>
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <h2>Agendar Consulta Interativa</h2>
+            <div id="calendar"></div>
+            <form id="schedule-form" action="submit_schedule.php" method="post">
+                <label for="selected-date">Data Selecionada:</label>
+                <input type="text" id="selected-date" name="selected_date" readonly required>
 
-            <label for="selected-time">Horário Selecionado:</label>
-            <input type="text" id="selected-time" name="selected_time" readonly required>
+                <label for="selected-time">Horário Selecionado:</label>
+                <input type="text" id="selected-time" name="selected_time" readonly required>
 
-            <button type="submit">Confirmar Agendamento</button>
-        </form>
-    </div>
-</section>
-
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </section>
     
     <section id="exam-records" class="section exam-records">
         <div class="container">
@@ -178,7 +173,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Clínica Veterinária UNIESP. Todos os direitos reservados.</p>
-            <p>Horário de Funcionamento: Segunda a Sexta, das 14h às 18h.</p>
+            <p>Horário de Funcionamento: Segunda a Sexta, das 14h às 17h.</p>
             <p class="supreme">Siga-nos nas redes sociais:</p>
             <div class="social-media">
                 <a href="#" class="social-link">Facebook</a>
