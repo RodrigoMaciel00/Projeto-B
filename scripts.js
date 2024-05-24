@@ -43,20 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Adicionar a classe 'selected' ao novo dia selecionado
-<<<<<<< Updated upstream
-        const newSelectedDayElement = [...calendar.children].find(el => el.textContent == day);
-        newSelectedDayElement.classList.add('selected');
+        const newSelectedDayElement = [...calendar.children].find(el => el.textContent == String(day));
+        if (newSelectedDayElement) {
+            newSelectedDayElement.classList.add('selected');
+        }
 
         // Atualizar o valor do input de data selecionada
         selectedDateInput.value = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         
         // Chamar a função para selecionar o horário
         selectTime();
-=======
-        const newSelectedDayElement = [...calendar.children].find(el => el.textContent == String(day));
-        if (newSelectedDayElement) {
-            newSelectedDayElement.classList.add('selected');
->>>>>>> Stashed changes
     };
 
     // Função para selecionar o horário
@@ -79,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const selectedTimeOption = timeSelection.querySelector('.time-option.selected');
                 if (selectedTimeOption) {
                     selectedTimeOption.classList.remove('selected');
-                }posição!
+                }
                 timeOption.classList.add('selected');
                 selectedTimeInput.value = time;
             });
