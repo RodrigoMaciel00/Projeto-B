@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Veterinária</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -13,175 +12,76 @@
             <h1 class="logo">Clínica Veterinária</h1>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#services">Serviços</a></li>
-                    <li><a href="#appointment">Agendar Consulta</a></li>
-                    <li><a href="#surgery">Agendar Cirurgia</a></li>
-                    <li><a href="#exam-records">Fichas de Exames</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="section about">
+    <section id="home" class="section js-scroll">
         <div class="container">
-            <h2>Sobre a Clínica</h2>
-            <img src="imgens/vet-projeto-B.jpg" alt="Clínica Veterinária" class="imagem-redonda">
-            <p>A Clínica Veterinária da UNIESP oferece cuidados de qualidade para o seu animal de estimação. Nosso compromisso é com o bem-estar e a saúde dos pets, proporcionando serviços veterinários de excelência.</p>
-            <p>Nossa equipe é composta por veterinários experientes e dedicados, prontos para atender às necessidades de cada animal com amor e cuidado.</p>
-            <p>Estamos localizados na <strong>Av. Principal, 123 - Centro</strong>.</p>
+            <h2>Bem-vindo à Nossa Clínica</h2>
+            <img src="clinic.jpg" alt="Clínica Veterinária" class="clinic-image">
         </div>
     </section>
 
-    <section id="services" class="section services">
+    <section id="services" class="section js-scroll">
         <div class="container">
             <h2>Nossos Serviços</h2>
             <div class="service-list">
-                <div class="service-item">Consultas Veterinárias</div>
-                <div class="service-item">Ultrassonografia</div>
-                <div class="service-item">Raio-X</div>
-                <div class="service-item">Vacinação</div>
-                <div class="service-item">Cirurgia</div>
-                <div class="service-item">Exames Hematológicos</div>
+                <div class="service-item">
+                    <h3>Consulta</h3>
+                    <p>Agende uma consulta com nossos veterinários especializados.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Vacinação</h3>
+                    <p>Mantenha seu pet protegido com nossas vacinas.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Cirurgias</h3>
+                    <p>Realizamos diversos tipos de cirurgias para o bem-estar do seu pet.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="appointment" class="section appointment">
+    <section id="about" class="section js-scroll">
         <div class="container">
-            <h2>Agendar Consulta</h2>
-            <form id="appointment-form" action="submit.php" method="post">
-                <label for="owner_name">Nome do Tutor:</label>
-                <input type="text" id="owner_name" name="owner_name" required>
-
-                <label for="contact_number">CPF do Tutor:</label>
-                <input type="tel" id="contact_number" name="contact_number" required>
-
-                <label for="pet_name">Nome do Animal:</label>
-                <input type="text" id="pet_name" name="pet_name" required>
-
-                <label for="species">Espécie do Animal:</label>
-                <select id="species" name="species" required>
-                    <option value="cachorro">Cachorro</option>
-                    <option value="gato">Gato</option>
-                </select>
-
-                <label for="age">Idade do Animal:</label>
-                <input type="text" id="age" name="age" required>
-
-                <label for="weight">Peso do Animal:</label>
-                <input type="text" id="weight" name="weight" required>
-
-                <label for="breed">Raça do Animal:</label>
-                <input type="text" id="breed" name="breed">
-
-                <label for="appointment_date">Data Preferencial para a Consulta:</label>
-                <input type="date" id="appointment_date" name="appointment_date" required>
-
-                <label for="preferred_time">Horário Preferencial para a Consulta:</label>
-                <select id="preferred_time" name="preferred_time" required>
-                    <option value="afternoon">Tarde</option>
-                </select>
-
-                <label for="additional_comments">Comentários Adicionais:</label>
-                <textarea id="additional_comments" name="additional_comments"></textarea>
-
-                <button type="submit">Agendar Consulta</button>
-            </form>
+            <h2>Sobre Nós</h2>
+            <p>Somos uma clínica veterinária dedicada a cuidar do seu pet com amor e carinho.</p>
         </div>
     </section>
 
-    <section id="surgery" class="section surgery">
-        <div class="container">
-            <h2>Agendar Cirurgia</h2>
-            <form id="surgery-form" action="submit_surgery.php" method="post">
-                <label for="owner_name_surgery">Nome do Tutor:</label>
-                <input type="text" id="owner_name_surgery" name="owner_name_surgery" required>
-
-                <label for="contact_number_surgery">CPF do Tutor:</label>
-                <input type="tel" id="contact_number_surgery" name="contact_number_surgery" required>
-
-                <label for="pet_name_surgery">Nome do Animal:</label>
-                <input type="text" id="pet_name_surgery" name="pet_name_surgery" required>
-
-                <label for="species_surgery">Espécie do Animal:</label>
-                <select id="species_surgery" name="species_surgery" required>
-                    <option value="cachorro">Cachorro</option>
-                    <option value="gato">Gato</option>
-                </select>
-
-                <label for="age_surgery">Idade do Animal:</label>
-                <input type="text" id="age_surgery" name="age_surgery" required>
-
-                <label for="weight_surgery">Peso do Animal:</label>
-                <input type="text" id="weight_surgery" name="weight_surgery" required>
-
-                <label for="breed_surgery">Raça do Animal:</label>
-                <input type="text" id="breed_surgery" name="breed_surgery">
-
-                <label for="surgery_date">Data Preferencial para a Cirurgia:</label>
-                <input type="date" id="surgery_date" name="surgery_date" required>
-
-                <label for="preferred_time_surgery">Horário Preferencial para a Cirurgia:</label>
-                <select id="preferred_time_surgery" name="preferred_time_surgery" required>
-                    <option value="afternoon">Tarde</option>
-                </select>
-
-                <label for="confirmation">Confirmação:</label>
-                <select id="confirmation" name="confirmation" required>
-                    <option value="1_day">1 dia antes</option>
-                    <option value="2_days">2 dias antes</option>
-                </select>
-
-                <button type="submit">Agendar Cirurgia</button>
-            </form>
-        </div>
-    </section>
-    <section id="schedule" class="section schedule">
-        <div class="container">
-            <h2>Agendar Consulta Interativa</h2>
-            <div id="calendar"></div>
-            <form id="schedule-form" action="submit_schedule.php" method="post">
-                <label for="selected-date">Data Selecionada:</label>
-                <input type="text" id="selected-date" name="selected_date" readonly required>
-
-                <label for="selected-time">Horário Selecionado:</label>
-                <input type="text" id="selected-time" name="selected_time" readonly required>
-
-                <button type="submit">Confirmar Agendamento</button>
-            </form>
-        </div>
-    </section>
-    
-    <section id="exam-records" class="section exam-records">
-        <div class="container">
-            <h2>Ficha do Paciente</h2>
-            <p>Em breve, os tutores poderão acessar as fichas de exames dos seus animais aqui.</p>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact">
+    <section id="contact" class="section js-scroll">
         <div class="container">
             <h2>Contato</h2>
-            <p>Telefone: (XX) XXXX-XXXX</p>
-            <p>Email: contato@clinicauniesp.com</p>
-            <p>Endereço: Av. Principal, 123 - Centro</p>
+            <form id="schedule-form">
+                <label for="pet-name">Nome do Pet</label>
+                <input type="text" id="pet-name" name="pet-name" required>
+
+                <label for="owner-name">Nome do Dono</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="selected-date">Data</label>
+                <input type="text" id="selected-date" name="selected-date" readonly required>
+                <div id="calendar"></div>
+
+                <label for="selected-time">Hora</label>
+                <input type="text" id="selected-time" name="selected-time" readonly required>
+
+                <button type="submit">Agendar</button>
+            </form>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Clínica Veterinária UNIESP. Todos os direitos reservados.</p>
-            <p>Horário de Funcionamento: Segunda a Sexta, das 14h às 17h.</p>
-            <p class="supreme">Siga-nos nas redes sociais:</p>
-            <div class="social-media">
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Twitter</a>
-            </div>
-            <p class="supreme">Conheça mais em nosso <a href="https://www.uniesp.br/" target="_blank" class="portal-link">portal UNIESP</a>.</p>
-        </div>
+        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>

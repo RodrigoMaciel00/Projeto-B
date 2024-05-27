@@ -1,76 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos DOM
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Calendar and Time Selection
     const calendar = document.getElementById('calendar');
     const selectedDateInput = document.getElementById('selected-date');
     const selectedTimeInput = document.getElementById('selected-time');
+    const scheduleForm = document.getElementById('schedule-form');
+    const timeOptions = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00'];
 
-    // Função para obter o número de dias em um mês específico
-    const daysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
-    
-    // Obter o mês e o ano atuais
-    let currentMonth = new Date().getMonth();
-    let currentYear = new Date().getFullYear();
+    const daysInMonth = (month, year) => new Date(year, month, 0).getDate();
+    const currentMonth = new Date().getMonth() + 1;
+    const currentYear = new Date().getFullYear();
+    const numberOfDays = daysInMonth(currentMonth, currentYear);
 
-    // Atualizar o calendário com os dias do mês
-    const updateCalendar = (month, year) => {
-        calendar.innerHTML = ''; // Limpa o calendário
-        const numberOfDays = daysInMonth(month, year);
-
-        for (let i = 1; i <= numberOfDays; i++) {
-            const date = new Date(year, month, i);
-            const dayElement = document.createElement('div');
-            dayElement.classList.add('calendar-day');
-            dayElement.textContent = i;
-
-            // Desabilitar sábados e domingos
-            if (date.getDay() === 0 || date.getDay() === 6) {
-                dayElement.classList.add('disabled');
-            } else {
-                // Adicionar um evento de clique para selecionar o dia
-                dayElement.addEventListener('click', () => selectDay(i));
-            }
-
-            calendar.appendChild(dayElement);
-        }
-    };
-
-    // Função para selecionar um dia no calendário
     const selectDay = (day) => {
-        // Remover a classe 'selected' do dia selecionado anteriormente, se houver
         const selectedDayElement = calendar.querySelector('.calendar-day.selected');
         if (selectedDayElement) {
             selectedDayElement.classList.remove('selected');
         }
-
-        // Adicionar a classe 'selected' ao novo dia selecionado
-        const newSelectedDayElement = [...calendar.children].find(el => el.textContent == String(day));
-        if (newSelectedDayElement) {
-            newSelectedDayElement.classList.add('selected');
-        }
-
-        // Atualizar o valor do input de data selecionada
-        selectedDateInput.value = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        
-        // Chamar a função para selecionar o horário
+        const newSelectedDayElement = [...calendar.children].find(el => el.textContent == day);
+        newSelectedDayElement.classList.add('selected');
+        selectedDateInput.value = `${currentYear}-${String(currentMonth).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         selectTime();
     };
 
-    // Função para selecionar o horário
     const selectTime = () => {
-        // Opções de horário disponíveis
-        const timeOptions = ['14:00', '15:00', '16:00'];
-        // Elemento HTML para exibir as opções de horário
         const timeSelection = document.createElement('div');
         timeSelection.id = 'time-selection';
         timeSelection.innerHTML = '';
 
-        // Iterar sobre as opções de horário e criar elementos para cada uma delas
         timeOptions.forEach(time => {
             const timeOption = document.createElement('div');
             timeOption.classList.add('time-option');
             timeOption.textContent = time;
-
-            // Adicionar um evento de clique para selecionar o horário
             timeOption.addEventListener('click', () => {
                 const selectedTimeOption = timeSelection.querySelector('.time-option.selected');
                 if (selectedTimeOption) {
@@ -79,11 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 timeOption.classList.add('selected');
                 selectedTimeInput.value = time;
             });
-
             timeSelection.appendChild(timeOption);
         });
 
-        // Verificar se já existe uma seleção de horário e substituí-la ou inserir uma nova
         const existingTimeSelection = document.getElementById('time-selection');
         if (existingTimeSelection) {
             existingTimeSelection.replaceWith(timeSelection);
@@ -92,6 +60,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Inicializar o calendário com o mês e ano atuais
-    updateCalendar(currentMonth, currentYear);
+    for (let i = 1; i <= numberOfDays; i++) {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('calendar-day');
+        dayElement.textContent = i;
+        dayElement.addEventListener('click', () => selectDay(i));
+        calendar.appendChild(dayElement);
+    }
+
+    scheduleForm.addEventListener('submit', (event) => {
+        if (!selectedDateInput.value || !selectedTimeInput.value) {
+            event.preventDefault();
+            alert('Por favor, selecione uma data e horário antes de agendar.');
+        }
+    });
+
+    // Scroll Animations
+    const scrollElements = document.querySelectorAll('.js-scroll');
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add('scrolled');
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove('scrolled');
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } else {
+                hideScrollElement(el);
+            }
+        })
+    };
+
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+
+    // Initial animation check
+    handleScrollAnimation();
 });
