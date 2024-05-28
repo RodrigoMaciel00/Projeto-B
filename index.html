@@ -1,65 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Veterinária UNIESP</title>
+    <title>Site Principal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">UNIESP Clínica Veterinária</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Serviços</a></li>
-                <li><a href="about.html">Sobre Nós</a></li>
-                <li><a href="donate.html">Doações</a></li>
-                <li><a href="contact.html">Contato</a></li>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Doações</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
                 <li><a href="schedule.html">Agendamento</a></li>
-                <li><a href="login.html">Login/Cadastro</a></li>
             </ul>
+            <button id="nav-toggle">Menu</button>
         </nav>
     </header>
-
     <main>
-        <section class="hero">
-            <h1>Bem-vindo à UNIESP Clínica Veterinária</h1>
-            <p>Seu parceiro para a saúde e bem-estar do seu pet.</p>
-            <a href="register.html" class="cta-button">Cadastre-se Agora</a>
-        </section>
-
-        <section class="info">
-            <div class="info-box">
-                <h2>Localização</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <section>
+            <h1>Bem-vindo à Clínica Veterinária</h1>
+            <div class="slider">
+                <div class="slide">Foto 1</div>
+                <div class="slide">Foto 2</div>
+                <div class="slide">Foto 3</div>
             </div>
-            <div class="info-box">
-                <h2>Serviços Oferecidos</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="info-box">
-                <h2>História da Fundação</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="info-box">
-                <h2>Informações sobre a Clínica</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </section>
-
-        <section class="photos">
-            <h2>Nosso Espaço</h2>
-            <img src="photo1.jpg" alt="Foto da clínica">
-            <img src="photo2.jpg" alt="Foto do atendimento">
-            <img src="photo3.jpg" alt="Foto do consultório">
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 UNIESP Clínica Veterinária. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
     </footer>
-
-    <script src="scripts.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

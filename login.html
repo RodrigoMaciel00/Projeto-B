@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clínica Veterinária UNIESP</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <img src="logo.png" alt="UNIESP">
-        <h2>Bem-vindo de volta!</h2>
-        <form action="login-process.php" method="POST">
-            <label for="username">Nome</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <form action="login_process.php" method="post">
+            <div>
+                <label for="username">Nome:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Entrar</button>
+            </div>
+            <div>
+                <a href="#" id="forgot-password">Esqueci minha senha</a>
+            </div>
         </form>
-        <a href="forgot-password.html">Esqueci a senha</a>
-    </div>
+        <div id="welcome-message"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
+    </footer>
+    <script src="login.js"></script>
 </body>
 </html>
