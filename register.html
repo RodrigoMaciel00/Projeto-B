@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Clínica Veterinária UNIESP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="register-container">
+        <img src="logo.png" alt="UNIESP">
+        <h2>Bem-vindo! Cadastre seu pet.</h2>
+        <form action="register-process.php" method="POST">
+            <label for="owner-name">Nome Completo</label>
+            <input type="text" id="owner-name" name="owner_name" required>
+            <label for="pet-name">Nome do Pet</label>
+            <input type="text" id="pet-name" name="pet_name" required>
+            <label for="pet-type">Tipo de Animal</label>
+            <select id="pet-type" name="pet_type" required>
+                <option value="bird">Pássaro</option>
+                <option value="cat">Gato</option>
+                <option value="dog">Cachorro</option>
+            </select>
+            <label for="pet-size">Porte do Animal</label>
+            <input type="text" id="pet-size" name="pet_size" required>
+            <label for="pet-breed">Raça do Animal</label>
+            <input type="text" id="pet-breed" name="pet_breed" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Celular/WhatsApp</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirmação de Senha</label>
+            <input type="password" id="confirm-password" name="confirm_password" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>

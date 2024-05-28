@@ -1,0 +1,43 @@
+Site Principal:
+- Este é o ponto inicial que as pessoas visitarão. Ele fornecerá as informações essenciais, como localização, serviços oferecidos, detalhes sobre a fundação e a clínica, além de um espaço para doações, login e cadastro, agendamento de consultas, entre outros serviços.
+- O design deste site deve ser atrativo e convincente, com animações utilizando CSS e JavaScript, informações rápidas e cores de fácil leitura, em conformidade com as práticas clínicas.
+
+Site de Login:
+- Este site terá cores tranquilas, com campos para inserir nome e senha, sem poluição visual, mas mantendo a identidade visual do site principal.
+- As informações de login serão armazenadas em um banco de dados SQL.
+
+Site de Cadastro:
+- Similar ao site de login, terá cores tranquilas e sem poluição visual. Os usuários fornecerão nome, senha e informações sobre o animal de estimação, como tipo (pássaro, gato, cachorro), porte, raça, e-mail e número de celular/WhatsApp.
+- Os dados de login e do animal serão salvos em um banco de dados SQL.
+
+Site de Agendamento:
+- Este site será organizado, seguindo uma estrutura de agenda com características de calendário, permitindo o cadastro de animais e agendamento de consultas.
+- Os dados das consultas e dos animais serão armazenados em um banco de dados SQL.
+- A interface deve ser simples e precisa, com opções para selecionar o serviço desejado e verificar disponibilidade.
+- Deve haver também espaço para informações adicionais, como condições médicas relevantes e contatos de emergência.
+- O sistema deve impedir o agendamento de consultas em horários/datas já ocupados, exibindo uma mensagem indicando a indisponibilidade.
+- Sempre que o calendário for aberto, uma mensagem de boas-vindas e a logo da Uniesp devem ser exibidas.
+
+Detalhes adicionais para as páginas específicas:
+- Principal (index.html):
+  - Botão de login/cadastro no canto direito da página.
+  - Placeholder para informações temporárias até que os dados reais sejam inseridos.
+  - Inclusão estratégica de fotos/desenhos para atrair o interesse do cliente.
+  - Design estético limpo e atraente.
+- Login (login.html):
+  - Espaço para a foto da Uniesp.
+  - Mensagem de boas-vindas representativa.
+  - Opção de recuperação de senha por e-mail.
+- Cadastro (register.html):
+  - Confirmação de senha.
+  - Nome completo do dono do animal.
+  - Opção para definir o tipo de animal.
+  - Campo para raça do animal, se aplicável.
+  - Espaços para e-mail e número de celular/WhatsApp.
+  - Inclusão da logo da Uniesp e mensagem de boas-vindas.
+- Agendamento (schedule.html):
+  - Utilização de um calendário para facilitar o agendamento.
+  - Seleção de serviço e verificação de disponibilidade.
+  - Espaço para informações adicionais e contato de emergência.
+  - Sistema de feedback indicando se o horário selecionado está disponível ou não.
+  - Exibição de uma mensagem de boas-vindas e da logo da Uniesp ao abrir o calendário/agenda.

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Clínica Veterinária UNIESP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="schedule-container">
+        <img src="logo.png" alt="UNIESP">
+        <h2>Agende uma Consulta</h2>
+        <p>"Cuidar dos nossos pets é um ato de amor."</p>
+        <form action="schedule-process.php" method="POST">
+            <label for="appointment-date">Data do Agendamento</label>
+            <input type="date" id="appointment-date" name="appointment_date" required>
+            <label for="appointment-time">Horário</label>
+            <input type="time" id="appointment-time" name="appointment_time" required>
+            <label for="service">Serviço</label>
+            <select id="service" name="service" required>
+                <option value="consulta">Consulta</option>
+                <option value="vacina">Vacina</option>
+                <option value="cirurgia">Cirurgia</option>
+            </select>
+            <label for="additional-info">Informações Adicionais</label>
+            <textarea id="additional-info" name="additional_info" rows="4"></textarea>
+            <label for="emergency-contact">Contato de Emergência</label>
+            <input type="tel" id="emergency-contact" name="emergency_contact" required>
+            <button type="submit">Agendar</button>
+        </form>
+    </div>
+</body>
+</html>

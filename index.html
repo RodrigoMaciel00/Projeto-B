@@ -1,87 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Veterinária</title>
+    <title>Clínica Veterinária UNIESP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Clínica Veterinária</h1>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <div class="logo">UNIESP Clínica Veterinária</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="about.html">Sobre Nós</a></li>
+                <li><a href="donate.html">Doações</a></li>
+                <li><a href="contact.html">Contato</a></li>
+                <li><a href="schedule.html">Agendamento</a></li>
+                <li><a href="login.html">Login/Cadastro</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="home" class="section js-scroll">
-        <div class="container">
-            <h2>Bem-vindo à Nossa Clínica</h2>
-            <img src="clinic.jpg" alt="Clínica Veterinária" class="clinic-image">
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>Bem-vindo à UNIESP Clínica Veterinária</h1>
+            <p>Seu parceiro para a saúde e bem-estar do seu pet.</p>
+            <a href="register.html" class="cta-button">Cadastre-se Agora</a>
+        </section>
 
-    <section id="services" class="section js-scroll">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <div class="service-list">
-                <div class="service-item">
-                    <h3>Consulta</h3>
-                    <p>Agende uma consulta com nossos veterinários especializados.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Vacinação</h3>
-                    <p>Mantenha seu pet protegido com nossas vacinas.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Cirurgias</h3>
-                    <p>Realizamos diversos tipos de cirurgias para o bem-estar do seu pet.</p>
-                </div>
+        <section class="info">
+            <div class="info-box">
+                <h2>Localização</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-        </div>
-    </section>
+            <div class="info-box">
+                <h2>Serviços Oferecidos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="info-box">
+                <h2>História da Fundação</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="info-box">
+                <h2>Informações sobre a Clínica</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </section>
 
-    <section id="about" class="section js-scroll">
-        <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Somos uma clínica veterinária dedicada a cuidar do seu pet com amor e carinho.</p>
-        </div>
-    </section>
+        <section class="photos">
+            <h2>Nosso Espaço</h2>
+            <img src="photo1.jpg" alt="Foto da clínica">
+            <img src="photo2.jpg" alt="Foto do atendimento">
+            <img src="photo3.jpg" alt="Foto do consultório">
+        </section>
+    </main>
 
-    <section id="contact" class="section js-scroll">
-        <div class="container">
-            <h2>Contato</h2>
-            <form id="schedule-form">
-                <label for="pet-name">Nome do Pet</label>
-                <input type="text" id="pet-name" name="pet-name" required>
-
-                <label for="owner-name">Nome do Dono</label>
-                <input type="text" id="owner-name" name="owner-name" required>
-
-                <label for="phone">Telefone</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="selected-date">Data</label>
-                <input type="text" id="selected-date" name="selected-date" readonly required>
-                <div id="calendar"></div>
-
-                <label for="selected-time">Hora</label>
-                <input type="text" id="selected-time" name="selected-time" readonly required>
-
-                <button type="submit">Agendar</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
+    <footer>
+        <p>&copy; 2024 UNIESP Clínica Veterinária. Todos os direitos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>
