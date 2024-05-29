@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="dashboard-container">
+        <section class="welcome-section">
+            <h2>Bem-vindo, [Nome do Usuário]</h2>
+            <p>Aqui você pode gerenciar suas consultas, perfil e outras informações.</p>
+        </section>
+        <section class="cards-section">
+            <div class="card">
+                <h3>Próxima Consulta</h3>
+                <p>Data: 30/05/2024</p>
+                <p>Hora: 15:00</p>
+                <p>Serviço: Consulta de Rotina</p>
+                <a href="appointments.html">Ver detalhes</a>
+            </div>
+            <div class="card">
+                <h3>Informações do Perfil</h3>
+                <p>Nome: [Nome do Usuário]</p>
+                <p>Email: [email@example.com]</p>
+                <a href="profile.html">Editar Perfil</a>
+            </div>
+            <div class="card">
+                <h3>Histórico de Consultas</h3>
+                <p>Última consulta: 20/04/2024</p>
+                <a href="history.html">Ver Histórico Completo</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
+    </footer>
+    <script src="dashboard.js"></script>
+</body>
+</html>
