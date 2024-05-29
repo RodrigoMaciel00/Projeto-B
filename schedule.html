@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Consultas</title>
+    <title>Agendamento - Clínica Veterinária Uniesp</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Agendamento de Consultas</h1>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Cadastro</a></li>
+            </ul>
+            <button id="nav-toggle">Menu</button>
+        </nav>
     </header>
     <main>
-        <form action="schedule_process.php" method="post">
-            <div>
-                <label for="appointment-date">Data da Consulta:</label>
-                <input type="date" id="appointment-date" name="appointment-date" required>
-            </div>
-            <div>
-                <label for="appointment-time">Hora da Consulta:</label>
-                <input type="time" id="appointment-time" name="appointment-time" required>
-            </div>
-            <div>
-                <label for="service">Serviço Desejado:</label>
-                <select id="service" name="service" required>
-                    <option value="consulta">Consulta</option>
-                    <option value="vacina">Vacinação</option>
-                    <option value="cirurgia">Cirurgia</option>
-                </select>
-            </div>
-            <div>
-                <label for="additional-info">Informações Adicionais:</label>
-                <textarea id="additional-info" name="additional-info"></textarea>
-            </div>
-            <div>
-                <label for="emergency-contact">Contato de Emergência:</label>
-                <input type="text" id="emergency-contact" name="emergency-contact" required>
-            </div>
-            <div id="availability-message" style="color: red;"></div>
-            <div>
-                <button type="submit">Agendar</button>
-            </div>
-        </form>
-        <div id="welcome-message"></div>
+        <div class="form-container">
+            <form action="confirmation.html" method="post">
+                <h1>Agendamento</h1>
+                <img src="uniesp-logo.png" alt="Logo Uniesp">
+                <div class="form-group">
+                    <label for="service">Serviço</label>
+                    <select id="service" name="service" required>
+                        <option value="consulta">Consulta</option>
+                        <option value="exame">Exame</option>
+                        <option value="vacina">Vacina</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Hora</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="additional-info">Informações Adicionais</label>
+                    <textarea id="additional-info" name="additional-info"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="emergency-contact">Contato de Emergência</label>
+                    <input type="tel" id="emergency-contact" name="emergency-contact" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Agendar</button>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Clínica Veterinária. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
     </footer>
-    <script src="schedule.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

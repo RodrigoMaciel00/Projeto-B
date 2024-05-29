@@ -1,0 +1,182 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do corpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+/* Herói */
+#hero {
+    background: #e3f2fd;
+    color: #333;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#hero .btn {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Seções */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Serviços */
+#services {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-item {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.service-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* Sobre Nós, Doações */
+#about p, #donations p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Formulários */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form h1 {
+    margin-bottom: 20px;
+}
+
+form img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
