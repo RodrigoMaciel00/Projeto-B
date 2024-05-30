@@ -3,71 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles/register.css">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="schedule.html">Agendamento</a></li>
-            </ul>
-            <button id="nav-toggle">Menu</button>
-        </nav>
-    </header>
-    <main>
-        <div class="form-container">
-            <form action="welcome.html" method="post" id="registerForm">
-                <h1>Cadastro</h1>
-                <img src="uniesp-logo.png" alt="Logo Uniesp">
-                <div class="form-group">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirme a Senha</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="pet-name">Nome do Pet</label>
-                    <input type="text" id="pet-name" name="pet-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="animal-type">Tipo de Animal</label>
-                    <select id="animal-type" name="animal-type" required>
-                        <option value="cachorro">Cachorro</option>
-                        <option value="gato">Gato</option>
-                        <option value="passaro">Pássaro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="breed">Raça (se aplicável)</label>
-                    <input type="text" id="breed" name="breed">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Número de Celular/WhatsApp</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Cadastrar</button>
-                </div>
-            </form>
-        </div>
-        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
-    </footer>
-    <script src="scripts/register.js"></script>
+    <div class="container">
+        <h1>Registro</h1>
+        <form id="registerForm" method="post" action="/register">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="pet_name">Nome do Pet:</label>
+                <input type="text" id="pet_name" name="pet_name" required>
+            </div>
+            <div class="form-group">
+                <label for="animal_type">Tipo de Animal:</label>
+                <input type="text" id="animal_type" name="animal_type" required>
+            </div>
+            <div class="form-group">
+                <label for="breed">Raça:</label>
+                <input type="text" id="breed" name="breed" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefone:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <button type="submit">Registrar</button>
+            <button type="button" onclick="window.location.href='index.html'">Voltar ao Principal</button>
+        </form>
+    </div>
+    <script src="js/register.js"></script>
 </body>
 </html>

@@ -41,10 +41,10 @@ app.get('/schedule', (req, res) => {
 
 app.post('/register', (req, res) => {
     const { name, email, password, pet_name, animal_type, breed, phone } = req.body;
-    const query = 'INSERT INTO Animais (Nome, Tipo, Tutor, Telefone) VALUES (?, ?, ?, ?)';
-    db.query(query, [pet_name, animal_type, name, phone], (err, result) => {
+    const query = 'INSERT INTO users (name, email, password, pet_name, animal_type, breed, phone) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [name, email, password, pet_name, animal_type, breed, phone], (err, result) => {
         if (err) throw err;
-        res.redirect(`/greeting.html?name=${name}&pet=${pet_name}`);
+        res.json({ success: true });
     });
 });
 
@@ -54,17 +54,17 @@ app.post('/login', (req, res) => {
     db.query(query, [email, password], (err, result) => {
         if (err) throw err;
         if (result.length > 0) {
-            res.redirect(`/welcome.html?name=${result[0].name}`);
+            res.json({ success: true, name: result[0].name });
         } else {
-            res.redirect('/login.html');
+            res.json({ success: false });
         }
     });
 });
 
 app.post('/schedule', (req, res) => {
     const { service, date, time, additional_info, emergency_contact, payment_method, pet_name } = req.body;
-    const query = 'INSERT INTO Agendamentos (Data, HorarioID, AnimalID, ServicoID) VALUES (?, ?, (SELECT ID FROM Animais WHERE Nome = ?), (SELECT ID FROM Servicos WHERE Nome = ?))';
-    db.query(query, [date, time, pet_name, service], (err, result) => {
+    const query = 'INSERT INTO appointments (service, date, time, additional_info, emergency_contact, payment_method, pet_name) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [service, date, time, additional_info, emergency_contact, payment_method, pet_name], (err, result) => {
         if (err) throw err;
         res.redirect(`/confirmation.html?date=${date}&time=${time}&pet=${pet_name}&payment=${payment_method}`);
     });

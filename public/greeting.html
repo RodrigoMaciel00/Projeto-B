@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saudação - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles/greeting.css">
+    <title>Saudação</title>
+    <link rel="stylesheet" href="css/greeting.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-                <li><a href="schedule.html">Agendamento</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="greeting">
-            <h1>Bem-vindo, <span id="user-name"></span>!</h1>
-            <p>Estamos felizes em tê-lo conosco.</p>
-            <p>Seu pet, <span id="pet-name"></span>, está em boas mãos.</p>
-            <button id="back-to-home">Voltar ao Principal</button>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
-    </footer>
-    <script src="scripts/greeting.js"></script>
+    <div class="container">
+        <h1>Bem-vindo, <span id="userName"></span>!</h1>
+        <p>Seu pet, <span id="petName"></span>, foi registrado com sucesso.</p>
+        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const pet = params.get('pet');
+            document.getElementById('userName').textContent = name;
+            document.getElementById('petName').textContent = pet;
+        });
+    </script>
 </body>
 </html>

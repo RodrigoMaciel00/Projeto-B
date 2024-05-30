@@ -3,47 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles/login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-                <li><a href="schedule.html">Agendamento</a></li>
-            </ul>
-            <button id="nav-toggle">Menu</button>
-        </nav>
-    </header>
-    <main>
-        <div class="form-container">
-            <form action="dashboard.html" method="post" id="loginForm">
-                <h1>Login</h1>
-                <img src="uniesp-logo.png" alt="Logo Uniesp">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Entrar</button>
-                </div>
-                <div class="form-group">
-                    <a href="register.html">Não tem uma conta? Cadastre-se</a>
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-            </form>
-        </div>
-        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
-    </footer>
-    <script src="scripts/login.js"></script>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm" method="post" action="/login">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <button type="button" onclick="window.location.href='index.html'">Voltar ao Principal</button>
+        </form>
+    </div>
+    <script src="js/login.js"></script>
 </body>
 </html>

@@ -3,58 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles/schedule.css">
+    <title>Agendar Consulta</title>
+    <link rel="stylesheet" href="css/schedule.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-            </ul>
-            <button id="nav-toggle">Menu</button>
-        </nav>
-    </header>
-    <main>
-        <div class="form-container">
-            <form action="confirmation.html" method="post" id="scheduleForm">
-                <h1>Agendamento de Consulta</h1>
-                <div class="form-group">
-                    <label for="date">Data</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Horário</label>
-                    <input type="time" id="time" name="time" required>
-                </div>
-                <div class="form-group">
-                    <label for="reason">Motivo da Consulta</label>
-                    <textarea id="reason" name="reason" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="is-student">Você é estudante?</label>
-                    <input type="checkbox" id="is-student" name="is-student">
-                </div>
-                <div class="form-group" id="payment-section">
-                    <label for="payment-method">Forma de Pagamento</label>
-                    <select id="payment-method" name="payment-method" required>
-                        <option value="pix">Pix</option>
-                        <option value="credito">Crédito</option>
-                        <option value="debito">Débito</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Agendar</button>
-                </div>
-            </form>
-        </div>
-        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
-    </footer>
-    <script src="scripts/schedule.js"></script>
+    <div class="container">
+        <h1>Agendar Consulta</h1>
+        <form id="scheduleForm" method="post" action="/schedule">
+            <div class="form-group">
+                <label for="service">Serviço:</label>
+                <select id="service" name="service" required>
+                    <option value="Consulta">Consulta</option>
+                    <option value="Ultrassom">Ultrassom</option>
+                    <option value="Raio-X">Raio-X</option>
+                    <option value="Vacinação">Vacinação</option>
+                    <option value="Cirurgia">Cirurgia</option>
+                    <option value="Exames Hematológicos">Exames Hematológicos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Hora:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="additional_info">Informações Adicionais:</label>
+                <textarea id="additional_info" name="additional_info"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="emergency_contact">Contato de Emergência:</label>
+                <input type="text" id="emergency_contact" name="emergency_contact" required>
+            </div>
+            <div class="form-group">
+                <label for="payment_method">Forma de Pagamento:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="Pix">Pix</option>
+                    <option value="Credito">Cartão de Crédito</option>
+                    <option value="Debito">Cartão de Débito</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pet_name">Nome do Pet:</label>
+                <input type="text" id="pet_name" name="pet_name" required>
+            </div>
+            <button type="submit">Agendar</button>
+            <button type="button" onclick="window.location.href='index.html'">Voltar ao Principal</button>
+        </form>
+    </div>
+    <script src="js/schedule.js"></script>
 </body>
 </html>
