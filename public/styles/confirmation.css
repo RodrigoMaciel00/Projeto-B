@@ -1,0 +1,60 @@
+/* confirmation.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.confirmation-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.confirmation-container h1 {
+    margin-bottom: 20px;
+}
+
+.confirmation-container p {
+    margin-bottom: 20px;
+}
+
+.confirmation-container button {
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirmation-container button:hover {
+    background-color: #303f9f;
+}
+
+footer {
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+}

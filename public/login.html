@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
     </header>
     <main>
         <div class="form-container">
-            <form action="dashboard.html" method="post">
+            <form action="dashboard.html" method="post" id="loginForm">
                 <h1>Login</h1>
                 <img src="uniesp-logo.png" alt="Logo Uniesp">
                 <div class="form-group">
@@ -39,10 +39,11 @@
                 </div>
             </form>
         </div>
+        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
     </main>
     <footer>
         <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>

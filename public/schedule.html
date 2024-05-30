@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento - Clínica Veterinária Uniesp</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/schedule.css">
 </head>
 <body>
     <header>
@@ -19,42 +19,42 @@
     </header>
     <main>
         <div class="form-container">
-            <form action="confirmation.html" method="post">
-                <h1>Agendamento</h1>
-                <img src="uniesp-logo.png" alt="Logo Uniesp">
-                <div class="form-group">
-                    <label for="service">Serviço</label>
-                    <select id="service" name="service" required>
-                        <option value="consulta">Consulta</option>
-                        <option value="exame">Exame</option>
-                        <option value="vacina">Vacina</option>
-                    </select>
-                </div>
+            <form action="confirmation.html" method="post" id="scheduleForm">
+                <h1>Agendamento de Consulta</h1>
                 <div class="form-group">
                     <label for="date">Data</label>
                     <input type="date" id="date" name="date" required>
                 </div>
                 <div class="form-group">
-                    <label for="time">Hora</label>
+                    <label for="time">Horário</label>
                     <input type="time" id="time" name="time" required>
                 </div>
                 <div class="form-group">
-                    <label for="additional-info">Informações Adicionais</label>
-                    <textarea id="additional-info" name="additional-info"></textarea>
+                    <label for="reason">Motivo da Consulta</label>
+                    <textarea id="reason" name="reason" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="emergency-contact">Contato de Emergência</label>
-                    <input type="tel" id="emergency-contact" name="emergency-contact" required>
+                    <label for="is-student">Você é estudante?</label>
+                    <input type="checkbox" id="is-student" name="is-student">
+                </div>
+                <div class="form-group" id="payment-section">
+                    <label for="payment-method">Forma de Pagamento</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="pix">Pix</option>
+                        <option value="credito">Crédito</option>
+                        <option value="debito">Débito</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <button type="submit">Agendar</button>
                 </div>
             </form>
         </div>
+        <button onclick="window.location.href='index.html'">Voltar ao Principal</button>
     </main>
     <footer>
         <p>&copy; 2024 Clínica Veterinária Uniesp. Todos os direitos reservados.</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="scripts/schedule.js"></script>
 </body>
 </html>
