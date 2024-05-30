@@ -1,4 +1,3 @@
--- Criação do banco de dados
 CREATE DATABASE agendamento;
 USE agendamento;
 
